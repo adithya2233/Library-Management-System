@@ -1,5 +1,6 @@
 package org.example.service.iml;
 
+import lombok.RequiredArgsConstructor;
 import org.example.dto.Book;
 import org.example.entity.BookEntity;
 import org.example.repository.BookRepository;
@@ -10,9 +11,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class BookServiceImpl implements BookService {
-    @Autowired
-    BookRepository repository;
+
+    final BookRepository repository;
 
     ModelMapper mapper;
     @Bean
